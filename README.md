@@ -37,11 +37,7 @@ This will print the translated text to the console.
 ```bash
 python app.py "नमस्ते"
 
-
-
 This will print the translated text to the console.
 
 ## Example
-
-```bash
-python app.py "नमस्ते"
+Output "hello"
