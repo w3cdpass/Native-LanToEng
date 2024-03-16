@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speech Transcription</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #c8c9cf;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        form {
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative; /* Added for positioning arrows */
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            position: relative; /* Ensure z-index works */
+            z-index: 2; /* Ensure button is above arrow */
+        }
+        .arrow {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 0;
+            height: 0;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-bottom: 10px solid #007bff; /* Arrow color */
+            transition: transform 2s, opacity 2s; /* Add transition for smooth movement */
+            opacity: 0; /* Initially hide the arrow */
+        }
+        .transcription-box {
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            max-width: 400px;
+            margin: 0 auto;
+            
+            position: relative; /* Added for positioning arrows */
+        }
+        .transcription-content {
+            font-size: 1em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Speech Transcription</h1>
+    <form action="/transcribe" method="POST">
+        <button id="recordButton" type="submit">Transcribe Speech</button>
+        <div class="arrow"></div> <!-- Arrow positioned behind the button -->
+    </form>
+    <div class="transcription-box">
+        <div class="transcription-title">Transcription</div>
+        <div class="transcription-content">
+            {% if transcription_text %}
+            <p>{{ transcription_text }}</p>
+            {% else %}
+            <p>No transcription available.</p>
+            {% endif %}
+        </div>
+    </div>
+    <script>
+        // Add event listener to button to show arrow
+        document.getElementById('recordButton').addEventListener('click', function() {
+            // Show the arrow
+            var arrow = document.querySelector('.arrow');
+            arrow.style.opacity = '1';
+            // Move the arrow to the transcription box
+            arrow.style.transform = 'translate(-50%, 680%)';
+        });
+    </script>
+</body>
+</html>
