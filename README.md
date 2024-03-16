@@ -29,3 +29,19 @@ This project is a simple Python application that translates text from a native l
 
 To translate text from a native language to English, run the `app.py` script and provide the text as an argument:
 
+
+This will print the translated text to the console.
+
+## Example
+
+```bash
+python app.py "नमस्ते"
+
+
+
+This will print the translated text to the console.
+
+## Example
+
+```bash
+python app.py "नमस्ते"
