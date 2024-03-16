@@ -1,0 +1,6 @@
+flask
+pyaudio
+wave
+openai
+os
+temfile
