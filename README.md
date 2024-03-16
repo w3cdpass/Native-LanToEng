@@ -8,7 +8,7 @@ This project is a simple Python application that translates text from a native l
 1. Clone the repository to your local machine:
 
     ```
-    [git clone https://github.com/your_username/native-to-english-translator.git](https://github.com/w3cdpass/Insurance-Charges-prediction.git)
+    git clone https://github.com/w3cdpass/Insurance-Charges-prediction.git
     ```
 
 2. Install the required dependencies using pip:
